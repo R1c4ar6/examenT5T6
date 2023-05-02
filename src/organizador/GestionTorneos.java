@@ -127,11 +127,13 @@ public class GestionTorneos {
         return res;
     }
 
-    //Fecha donde hay mas premios
+    //Ambito que genera mejores premios
     public String ambitoMasRentable() {
         String res = "";
-               
-
+            HashMap<Character, Double> sum=this.sumaPorAmbito();
+            ArrayList<Entry<Character, Double>> orden=new ArrayList<>(sum.entrySet());
+            orden.sort((a,b)-> Double.compare(b.getValue(), a.getValue()));
+            res+=Torneo.getAmbitoCompleto(orden.get(0).getKey());
         return res;
     }
 }
