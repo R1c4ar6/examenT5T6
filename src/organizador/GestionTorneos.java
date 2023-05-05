@@ -54,7 +54,7 @@ public class GestionTorneos {
     public String filtrarTorneos() {
         String res = "";
         for (Torneo tor : this.gestor.values()) {
-            if (tor.getAmbito()=='N' || tor.getPremio()>50.000) {
+            if (tor.getAmbito()=='N' || tor.getPremio()>50000) {
                 res+=tor.toString();
             }
         }
@@ -77,8 +77,8 @@ public class GestionTorneos {
     
     //borrar poco rentables
     public void borrarPocoRentables() {
-        ArrayList<Torneo> listado = new ArrayList<>(this.gestor.values());
-        Iterator<Torneo> tor = listado.iterator();
+//        ArrayList<Torneo> listado = new ArrayList<>(this.gestor.values()); NO ES NECESARIO
+        Iterator<Torneo> tor = this.gestor.values().iterator();
         Torneo objeto;
         boolean eliminado = false;
         while (tor.hasNext()) {
