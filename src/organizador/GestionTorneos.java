@@ -80,14 +80,18 @@ public class GestionTorneos {
         ArrayList<Torneo> listado = new ArrayList<>(this.gestor.values());
         Iterator<Torneo> tor = listado.iterator();
         Torneo objeto;
+        boolean eliminado = false;
         while (tor.hasNext()) {
             objeto = tor.next();
             if (objeto.getPremio() <= 3000) {
                 tor.remove();
-                System.out.println("Torneo borrado exitosamente");
-            } else {
-                System.out.println("No se encontraron torneos a borrar");
+                eliminado = true;
             }
+        }
+        if (eliminado) {
+            System.out.println("Torneo borrado exitosamente");
+        } else {
+            System.out.println("No se encontraron torneos a borrar");
         }
     }
 
