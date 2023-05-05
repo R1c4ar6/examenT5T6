@@ -96,7 +96,6 @@ public class GestionTorneos {
     }
 
     
-    
     //Menor premio tipo
     public String menorPremioAmbito(char ambito) {
         String menor = "";
@@ -123,8 +122,8 @@ public class GestionTorneos {
     public String sumarPremiosPorAmbito() {
         String res = "";
         HashMap<Character, Double> sum=this.sumaPorAmbito();
-        for (Entry<Character, Double> tor : sum.entrySet()) {
-            String ambito=Torneo.getAmbitoCompleto(tor.getKey());
+        for (Entry<Character, Double> tor : sum.entrySet()) {//EL ENTRY LO QUE HACE ES GUARDAR CLAVE Y VALOR SIN
+            String ambito=Torneo.getAmbitoCompleto(tor.getKey());//SER UN HASHMAP
             double premio=tor.getValue();
             res+=ambito+"->"+premio+"\n";
         }
