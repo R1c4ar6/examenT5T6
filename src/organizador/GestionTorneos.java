@@ -39,9 +39,9 @@ public class GestionTorneos {
     @Override
     public String toString() {
         String res = "";
-        ArrayList<Torneo> si = new ArrayList<>(this.gestor.values());
-        if (si.isEmpty()) {
-            System.out.println("No existe ningun torneo en el sistema");
+//        ArrayList<Torneo> si = new ArrayList<>(this.gestor.values());NO ERA NECESARIO
+        if (this.gestor.isEmpty()) {
+            res+="No existe ningun torneo en el sistema";
         } else {
             for (Torneo tor : this.gestor.values()) {
                 res += tor.toString();
